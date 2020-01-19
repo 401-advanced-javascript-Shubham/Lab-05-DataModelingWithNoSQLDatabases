@@ -1,12 +1,11 @@
 'use strict';
 
 const uuid = require('uuid/v4');
-const Validator = require('@jet-city-software/validator');
+let Validator = require('./Validator/lib/validator.js');
 const validator = new Validator();
 
 class Collection {
   constructor(DataModel) {
-    // this.database = {};
     this.DataModel = DataModel
   }
 
@@ -37,6 +36,9 @@ class Collection {
   }
 
   update(id, record) {
+    let record = new this.DataModel(data);
+    this.database[record.id] = record;
+    return record
 
   }
 

@@ -14,11 +14,14 @@
 
 ### Setup
 #### `.env` requirements (where applicable)
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `PORT` - 27017
+* `MONGODB_URI` - mongodb://localhost:27017/lab05
 
 #### How to initialize/run your server app (where applicable)
 * `npm start`
+* npm install mongoose
+* npm i dotenv
+* npm i @code-fellows/supergoose jest
   
 #### Tests
 * How do you run tests?

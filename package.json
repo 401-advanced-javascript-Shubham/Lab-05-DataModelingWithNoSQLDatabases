@@ -4,7 +4,9 @@
   "description": "## Data Modeling with NoSQL Database",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint **/.js",
+    "test": "jest --coverage --verbose",
+    "test-watch": "jest --watchAll --coverage --verbose"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/401-advanced-javascript-Shubham/Lab-05-DataModelingWithNoSQLDatabases/issues"
   },
-  "homepage": "https://github.com/401-advanced-javascript-Shubham/Lab-05-DataModelingWithNoSQLDatabases#readme"
+  "homepage": "https://github.com/401-advanced-javascript-Shubham/Lab-05-DataModelingWithNoSQLDatabases#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.8.9"
+  }
 }

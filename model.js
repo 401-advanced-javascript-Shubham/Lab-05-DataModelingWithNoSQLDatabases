@@ -1,7 +1,7 @@
 'use strict';
 
 let uuid = require('uuid').v4;
-let Validator = require('@jet-city-software/validator');
+let Validator = require('./Validator/lib/validator.js');
 let validator = new Validator();
 
 class Model {
@@ -23,6 +23,11 @@ class Model {
   }
 
   delete() {
+    if(validator.isValid(this.schema, data)){
+      Object.keys(this.schema.fields).forEach(key => {
+        
+      })
+    }
   }
 
   update(newVersion) {
