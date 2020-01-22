@@ -1,14 +1,17 @@
 'use strict';
 
-
-const mongoose = require('mongoose');
-const Model = require('../../model.js');
-
-const categories = mongoose.Schema({
-  id: { type: 'String' ,required: true },
-  name: { type: 'String' , required: true },
-      });
-  
+const schema = require('./category.js');
+const Collection = require('../../collection.js');
 
 
-module.exports = mongoose.model('categories',categories);
+class Category extends Collection {
+
+
+  constructor() {
+    super()
+    this.schema = schema
+  }
+}
+
+module.exports = Category;
+

@@ -1,7 +1,7 @@
 'use strict';
 
 let uuid = require('uuid').v4;
-let Validator = require('./Validator/lib/validator.js');
+let Validator = require('./validator/lib/validator.js');
 let validator = new Validator();
 
 class Model {

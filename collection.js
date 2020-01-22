@@ -1,49 +1,28 @@
 'use strict';
 
-const uuid = require('uuid/v4');
-let Validator = require('./Validator/lib/validator.js');
-const validator = new Validator();
 
 class Collection {
-  constructor(DataModel) {
-    this.DataModel = DataModel
+
+
+  constructor() {
   }
 
   get(id) {
-    /*
-      {
-        count: 12,
-        results: [ {}, {], {}]
-      }
-
-      {}
-    */
-
-    if (!id) {
-      return { results: [this.database] };
-    }
-    else {
-      return this.database[id];
-    }
+    if (id) { return this.schema.findOne({ _id: id }); }
+    else { return schema.find({}); }
   }
 
-  create(data) {
-
-    let record = new this.DataModel(data);
-    this.database[record.id] = record;
-    return record
-
+  create(record) {
+    let newRecord = new this.schema(record);
+    return newRecord.save();
   }
 
   update(id, record) {
-    let record = new this.DataModel(data);
-    this.database[record.id] = record;
-    return record
-
+    return this.schema.findByIdAndUpdate(id, record, { new: true });
   }
 
   delete(id) {
-    delete this.database[id];
+    return this.schema.findByIdAndDelete(id);
   }
 }
 

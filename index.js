@@ -1,18 +1,24 @@
 'use strict';
 
-require('dotenv').config();
 
+//3rd party dependencies
+require('dotenv').config();
 const mongoose = require('mongoose');
+
+//My Dependencies
+const Category = require('./models/categories/category.js/index.js');
+const Product = require('./models/products/products.js');
+
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
-const Category = require('./models/categories/categories.js');
-const category = new Category;
-const Product = require('./models/products/products.js');
-const product = new product();
+//----------------------------------------
+
+const category = new Category();
+const product = new Product();
 
 let appliance = {
   id: "12345",
@@ -24,7 +30,8 @@ let appliance = {
 
 
 product.create(appliance)
-  .then(() => food.get())
+.then(record => console.log(record))
+  .then(() => product.get())
   .then(data => console.log(data))
   .catch(console.error);
 
